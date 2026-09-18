@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\StudentExport;
 use App\Models\Institution;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -108,5 +110,10 @@ class StudentController extends Controller
         $student->delete();
 
         return redirect()->route('students.index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new StudentExport, 'students.xlsx');
     }
 }

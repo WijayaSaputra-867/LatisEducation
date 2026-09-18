@@ -21,8 +21,8 @@
         </div>
 
         <div class="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center sm:gap-3">
-            <button
-                type="button"
+            <a
+                href="{{ route('students.export') }}"
                 id="export-button"
                 class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 sm:w-auto"
             >
@@ -40,7 +40,7 @@
                     />
                 </svg>
                 Export Excel
-            </button>
+            </a>
 
             <a
                 href="{{ route('students.create') }}"
